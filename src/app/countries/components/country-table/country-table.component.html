@@ -1,0 +1,33 @@
+<ng-container *ngIf="countriesList.length==0; else table">
+  <div class="alert alert-warning" role="alert" ngi>
+    No hay paises que mostrar
+  </div>
+</ng-container>
+
+<ng-template #table>
+
+  <table class="table table-striped" aria-describedby="mydesc">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ICON</th>
+        <th scope="col">BANDERA</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">CAPITAL</th>
+        <th scope="col">POBLACION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countriesList, let i = index">
+        <th scope="row"> {{ i + 1 }}</th>
+        <td>{{ country.flag }}</td>
+        <td><img [src]="country.flags.svg" [alt]="country.name.common" width="20px" height="20px"></td>
+        <td>{{ country.name.common }}</td>
+        <td>{{ country.capital }}</td>
+        <td>{{ country.population | number }}</td>
+        <td><a href="http://" target="_blank">Ver mas</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</ng-template>

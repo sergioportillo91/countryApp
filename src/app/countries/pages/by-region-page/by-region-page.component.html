@@ -1,0 +1,14 @@
+<h2>BUSQUEDA POR REGION</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-search-box placeholder="Buscar por region" (onEmitter)="searchByRegion($event)"></app-search-box>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <app-country-table [countriesList]="countries"></app-country-table>
+  </div>
+</div>

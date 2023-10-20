@@ -3,12 +3,13 @@
 
 <div class="row">
   <div class="col">
-    <app-search-box placeholder="Buscar por pais" (onEmitter)="searchByCountry($event)"></app-search-box>
+    <app-search-box placeholder="Buscar por pais" (onDebounce)="searchByCountry($event)"></app-search-box>
   </div>
 </div>
 
 <div class="row">
   <div class="col">
+    <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
     <app-country-table [countriesList]="countries"></app-country-table>
   </div>
 </div>

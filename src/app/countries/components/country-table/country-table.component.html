@@ -1,7 +1,8 @@
 <ng-container *ngIf="countriesList.length==0; else table">
-  <div class="alert alert-warning" role="alert" ngi>
+  <div class="alert alert-warning mt-2" role="alert" ngi>
     No hay paises que mostrar
   </div>
+
 </ng-container>
 
 <ng-template #table>
@@ -25,7 +26,7 @@
         <td>{{ country.name.common }}</td>
         <td>{{ country.capital }}</td>
         <td>{{ country.population | number }}</td>
-        <td><a href="http://" target="_blank">Ver mas</a></td>
+        <td><a [routerLink]="['/countries/by',country.cca3]">Ver info</a></td>
       </tr>
     </tbody>
   </table>

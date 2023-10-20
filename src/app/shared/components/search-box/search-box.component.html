@@ -1,2 +1,2 @@
 <input class="form-control" type="text" [placeholder]="placeholder" #txtBusqueda
-  (keyup.enter)="emitValue(txtBusqueda.value)">
+  (keyup)="onKeyPress(txtBusqueda.value)">
